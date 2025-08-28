@@ -1,0 +1,213 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Couleurs */
+:root {
+  --dark-bg: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --text-light: #ffffff;
+  --text-muted: #bbbbbb;
+
+  /* Dégradé doré métallisé */
+  --gold-gradient: linear-gradient(
+    45deg,
+    #d4af37,
+    #f7e28c,
+    #b8860b,
+    #f7e28c,
+    #d4af37
+  );
+}
+
+/* Body */
+body {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+.restaurant-name {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-outline {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background: transparent;
+  background-image: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: var(--gold-gradient);
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: #000;
+  color: #000;
+  box-shadow: 0 0 15px #d4af37;
+  border: none;
+}
+
+/* About */
+.about {
+  padding: 5rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-text {
+  color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+/* Animation élégante */
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Appliquer l'animation au header */
+.header {
+  animation: fadeZoomIn 1.5s ease-out;
+}
+
+/* Appliquer l'animation aux sections */
+.about,
+.features,
+.footer {
+  animation: fadeZoomIn 1.5s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+/* Appliquer l'animation aux cartes */
+.card {
+  animation: fadeZoomIn 1.5s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+/* Fix des cards sur mobile */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre les cartes */
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.card {
+  width: 100%; /* occupe toute la largeur sur mobile */
+  max-width: 400px; /* mais pas plus large que 400px */
+  background: rgba(0, 0, 0, 0.6); /* fond élégant */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f1c40f; /* doré élégant pour uniformiser */
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #ddd;
+}
